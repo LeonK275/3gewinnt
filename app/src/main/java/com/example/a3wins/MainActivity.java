@@ -2,6 +2,7 @@ package com.example.a3wins;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,8 @@ import java.util.logging.Logger;
 public class MainActivity extends AppCompatActivity {
 
     List<ImageView> imageViewList = new ArrayList<>();
+
+    boolean player1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +52,31 @@ public class MainActivity extends AppCompatActivity {
             imageViewList.add(imageView);
         }
 
-        imageViewList.get(1).setImageResource(R.drawable.red);
 
 
+
+
+    }
+
+    public void play(View view) {
+
+        int clickedID = view.getId();
+
+        for (int i = 0; i < imageViewList.size(); i++) {
+
+            if (imageViewList.get(i).getId() == clickedID) {
+
+                Log.i("CLICKED",String.valueOf(imageViewList.get(i).getId()));
+
+                int finalI = i;
+                imageViewList.get(i).animate().alpha(0).setDuration(10).withEndAction(() -> {
+                    imageViewList.get(finalI).setImageResource(player1 ? R.drawable.red : R.drawable.yellow);
+                    player1 = !player1;
+                    imageViewList.get(finalI).animate().alpha(1).setDuration(10);
+                });
+            }
+
+        }
 
     }
 }

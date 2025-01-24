@@ -29,19 +29,25 @@
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="138dp"
+            android:clickable="true"
+            android:onClick="play"
             tools:srcCompat="@drawable/red" />
 
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="match_parent"
-            android:layout_height="154dp"
+            android:layout_height="148dp"
+            android:clickable="true"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageView8"
             android:layout_width="match_parent"
-            android:layout_height="163dp"
+            android:layout_height="142dp"
+            android:clickable="true"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
@@ -58,19 +64,23 @@
         <ImageView
             android:id="@+id/imageView9"
             android:layout_width="match_parent"
-            android:layout_height="142dp"
+            android:layout_height="138dp"
+            android:clickable="true"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageView10"
-            android:layout_width="154dp"
-            android:layout_height="162dp"
+            android:layout_width="match_parent"
+            android:layout_height="148dp"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageView11"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="142dp"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 
@@ -88,18 +98,24 @@
             android:id="@+id/imageView12"
             android:layout_width="match_parent"
             android:layout_height="138dp"
+            android:clickable="true"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageView13"
             android:layout_width="match_parent"
             android:layout_height="148dp"
+            android:clickable="true"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/imageView14"
             android:layout_width="match_parent"
             android:layout_height="142dp"
+            android:clickable="true"
+            android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
