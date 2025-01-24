@@ -79,4 +79,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    public void newGame(View view) {
+        for (ImageView i : imageViewList) {
+            i.setImageResource(0);
+            i.animate().alpha(1.0f);
+
+        }
+    }
 }

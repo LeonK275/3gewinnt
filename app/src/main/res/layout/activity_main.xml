@@ -118,4 +118,15 @@
             android:onClick="play"
             tools:srcCompat="@tools:sample/avatars" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/newgamebt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="newGame"
+        android:text="New Game"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
