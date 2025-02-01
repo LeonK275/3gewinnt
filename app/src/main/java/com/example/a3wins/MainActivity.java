@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     public String[] spielfeld;
 
     boolean player1;
+    int zahlen;
+
+    int punkteP1;
+    int punkteP2;
     int[] imageViewIds;
 
     @Override
@@ -91,14 +97,49 @@ public class MainActivity extends AppCompatActivity {
                     player1 = !player1;
                     Log.i("spielfeld", Arrays.deepToString(spielfeld));
                     imageViewList.get(finalI).animate().alpha(1).setDuration(10);
+
+
+                    //Vertikale Operation
+                    for (String punkt:spielfeld) {
+                        zahlen++;
+                        if(zahlen==4){punkteP2=0;punkteP1=0;zahlen=1;}
+                        if(Objects.equals(punkt, "Player1")){
+                            punkteP1++;
+                            Log.i("PUNKTEEE", "Punkt für Player 1");
+                        }
+                        else {
+                            punkteP1=0;
+                        }
+                        if(Objects.equals(punkt, "Player2")){
+                            punkteP2++;
+                            Log.i("PUNKTEEE", "Punkt für Player 2");
+                        }
+                        else {
+                            punkteP2=0;
+                        }
+
+                        if(punkteP1==3) {
+                            Toast.makeText(this, "Player 1 Wins", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                        if(punkteP2==3){
+                            Toast.makeText(this, "Player 2 Wins", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                    }
+                    punkteP2=0;
+                    punkteP1=0;
+
+                    //Horizontale Operation
+
+
                 });
             }
 
         }
 
-        for (String punkt:spielfeld) {
-            Log.i("Punkt", punkt);
-        }
+
+
 
     }
 
