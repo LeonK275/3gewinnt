@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
                         if(g==2||g==6){g=g+4;}
 
 
-                        if(g>11){break;}
+                        if(g>=10){break;}
                         Log.i("GH=",String.valueOf(g));
                         if(Objects.equals(spielfeld[g], "Player1")){
                             punkteP1++;
@@ -229,8 +229,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         for (ImageView i : imageViewList) {
-            i.setImageResource(0);
-            i.animate().alpha(1.0f);
+
+            i.animate().rotation(360.0F).setDuration(1000).withEndAction(() -> {
+                i.animate().alpha(0).setDuration(1000).withEndAction(()->{i.setRotation(0);i.setImageResource(0);});
+
+            }
+            );
 
         }
     }
