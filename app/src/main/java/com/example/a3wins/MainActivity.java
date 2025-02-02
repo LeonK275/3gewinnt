@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
             i.animate().rotation(360.0F).setDuration(1000).withEndAction(() -> {
                 i.animate().alpha(0).setDuration(1000).withEndAction(()->{i.setRotation(0);i.setImageResource(0);});
 
-            }.
+            }
             );
 
         }
