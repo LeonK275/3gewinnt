@@ -119,11 +119,11 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         if(punkteP1==3) {
-                            Toast.makeText(this, "Player 1 Wins", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "RED Wins", Toast.LENGTH_SHORT).show();
                             break;
                         }
                         if(punkteP2==3){
-                            Toast.makeText(this, "Player 2 Wins", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "YELLOW Wins", Toast.LENGTH_SHORT).show();
                             break;
                         }
                     }
@@ -131,6 +131,39 @@ public class MainActivity extends AppCompatActivity {
                     punkteP1=0;
 
                     //Horizontale Operation
+                    for(int g = 0; ; g=g+3){
+                        if(g==9){punkteP1=0;punkteP2=0;g=1;}
+                        if(g==10){punkteP1=0;punkteP2=0;g=2;}
+                        if(g==11){break;}
+                        Log.i("G=",String.valueOf(g));
+                        if(Objects.equals(spielfeld[g], "Player1")){
+                            punkteP1++;
+                            Log.i("PUNKTEEE", "Punkt für Player 1");
+                        }
+                        else {
+                            punkteP1=0;
+                        }
+                        if(Objects.equals(spielfeld[g], "Player2")){
+                            punkteP2++;
+                            Log.i("PUNKTEEE", "Punkt für Player 2");
+                        }
+                        else {
+                            punkteP2=0;
+                        }
+
+                        if(punkteP1==3) {
+                            Toast.makeText(this, "RED Wins", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                        if(punkteP2==3){
+                            Toast.makeText(this, "YELLOW Wins", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                    }
+                    punkteP2=0;
+                    punkteP1=0;
+
+
 
 
                 });
