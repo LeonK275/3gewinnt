@@ -127,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         }
                     }
+
                     punkteP2=0;
                     punkteP1=0;
 
@@ -163,6 +164,41 @@ public class MainActivity extends AppCompatActivity {
                     punkteP2=0;
                     punkteP1=0;
 
+                    //Diagonale Operation
+                    for(int g = 0; ; ){
+                        if(g==8){punkteP1=0;punkteP2=0;g=2;}
+                        if(g==0||g==4){g=g+4;}
+                        if(g==2||g==6){g=g+4;}
+
+
+                        if(g>11){break;}
+                        Log.i("GH=",String.valueOf(g));
+                        if(Objects.equals(spielfeld[g], "Player1")){
+                            punkteP1++;
+                            Log.i("PUNKTEEE", "Punkt für Player 1");
+                        }
+                        else {
+                            punkteP1=0;
+                        }
+                        if(Objects.equals(spielfeld[g], "Player2")){
+                            punkteP2++;
+                            Log.i("PUNKTEEE", "Punkt für Player 2");
+                        }
+                        else {
+                            punkteP2=0;
+                        }
+
+                        if(punkteP1==3) {
+                            Toast.makeText(this, "RED Wins", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                        if(punkteP2==3){
+                            Toast.makeText(this, "YELLOW Wins", Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                    }
+                    punkteP2=0;
+                    punkteP1=0;
 
 
 
