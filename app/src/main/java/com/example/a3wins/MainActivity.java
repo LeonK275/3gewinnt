@@ -120,10 +120,14 @@ public class MainActivity extends AppCompatActivity {
 
                         if(punkteP1==3) {
                             Toast.makeText(this, "RED Wins", Toast.LENGTH_SHORT).show();
+                            winningAnimation();
+
                             break;
                         }
                         if(punkteP2==3){
                             Toast.makeText(this, "YELLOW Wins", Toast.LENGTH_SHORT).show();
+                            winningAnimation();
+
                             break;
                         }
                     }
@@ -154,33 +158,37 @@ public class MainActivity extends AppCompatActivity {
 
                         if(punkteP1==3) {
                             Toast.makeText(this, "RED Wins", Toast.LENGTH_SHORT).show();
+                            winningAnimation();
+
                             break;
                         }
                         if(punkteP2==3){
                             Toast.makeText(this, "YELLOW Wins", Toast.LENGTH_SHORT).show();
+                            winningAnimation();
+
                             break;
                         }
                     }
                     punkteP2=0;
                     punkteP1=0;
-
+                    int[] sequenz = {0, 4, 8, 2, 4, 6};
                     //Diagonale Operation
-                    for(int g = 0; ; ){
-                        if(g==8){punkteP1=0;punkteP2=0;g=2;}
-                        if(g==0||g==4){g=g+4;}
-                        if(g==2||g==6){g=g+4;}
+                    for(int see : sequenz ){
+                        //if(sequenz[see]==8){punkteP1=0;punkteP2=0;}
 
 
-                        if(g>=10){break;}
-                        Log.i("GH=",String.valueOf(g));
-                        if(Objects.equals(spielfeld[g], "Player1")){
+
+
+
+                        Log.i("GH=",String.valueOf(see));
+                        if(Objects.equals(spielfeld[see], "Player1")){
                             punkteP1++;
                             Log.i("PUNKTEEE", "Punkt für Player 1");
                         }
                         else {
                             punkteP1=0;
                         }
-                        if(Objects.equals(spielfeld[g], "Player2")){
+                        if(Objects.equals(spielfeld[see], "Player2")){
                             punkteP2++;
                             Log.i("PUNKTEEE", "Punkt für Player 2");
                         }
@@ -190,10 +198,14 @@ public class MainActivity extends AppCompatActivity {
 
                         if(punkteP1==3) {
                             Toast.makeText(this, "RED Wins", Toast.LENGTH_SHORT).show();
+                            winningAnimation();
+
                             break;
                         }
                         if(punkteP2==3){
                             Toast.makeText(this, "YELLOW Wins", Toast.LENGTH_SHORT).show();
+                            winningAnimation();
+
                             break;
                         }
                     }
@@ -235,6 +247,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
             );
+
+        }
+    }
+
+    public void winningAnimation(){
+        for (ImageView z : imageViewList) {
+
+            z.animate().alpha(0.1F).setDuration(500).withEndAction(()->{z.animate().alpha(1).setDuration(500);});
 
         }
     }
